@@ -10,7 +10,10 @@ I implemented a **Medallion Architecture** on Databricks to provide clear data l
 
 ### Layer Definitions:
 * **Bronze:** Raw ingestion from ADLS Gen2 using **Auto Loader**. Stores data in Delta format with schema inference.
- 
+<details>
+<img src="img/SourceFileStructure.jpg" width="100%">
+</details>details>
+
 * **Silver:** Data cleansing and validation. Implemented **Schema Evolution** and `_rescued_data` recovery to handle malformed JSON.
 * **Gold:** Business Logic layer. Created **SQL Views** for investigative alerting (PEP Monitoring, Fuzzy Name Matching).
 
@@ -41,6 +44,8 @@ Using the gold layer tables, the dashboard is generated with the below metrics.
 
 Job:
 End to end orchestration is maintained in job using relevant dependencies. 
-
+<details>
+<img src="img/Job.jpg" width="100%">
+</details>details>
 
 
