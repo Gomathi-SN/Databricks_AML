@@ -46,6 +46,6 @@ Job:
 End to end orchestration is maintained in job using relevant dependencies. 
 <details>
 <img src="img/Job.jpg" width="100%">
-</details>details>
+</details>
 
 
