@@ -32,11 +32,17 @@ df.withColumn("amount", coalesce(col("amount"), get_json_object(col("_rescued_da
 ### Dashboard:
 Using the gold layer tables, the dashboard is generated with the below metrics. 
 •	Number of transactions per day
+
 •	Top 10 customers with high transaction amounts
+
 •	Client name, Sanctioned name and their distance calculated
+
 •	Number of Fuzzy clients for Sanctioned clients
+
 •	High volume of transactions from PEP clients
+
 •	Number of PEP clients within High risk sectors
+
 
 <details>
 <img src="img/AMLDashboard.jpg" width="100%">
