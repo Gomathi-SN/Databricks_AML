@@ -1,9 +1,9 @@
 # Design Document: AML Data Pipeline (Medallion Architecture)
 ## 1. Problem Statement
-The goal of this project is to detect high-risk financial activity (PEPs, Sanctioned names, and High-Volume transactions) from raw banking data while ensuring 100% data integrity for Swiss compliance.
+The goal of this project is to detect high-risk financial activity (PEPs, Sanctioned names, and High-Volume transactions) from raw banking data while ensuring 100% data integrity for compliance.
 
 ## 2. Architecture Overview
-I implemented a **Medallion Architecture** on Databricks to provide clear data lineage and separation of concerns.
+Implemented a **Medallion Architecture** on Databricks to provide clear data lineage.
 <details>
 <img src="img/README.jpg" width="100%">
 </details>
@@ -14,8 +14,9 @@ I implemented a **Medallion Architecture** on Databricks to provide clear data l
 <img src="img/SourceFileStructure.jpg" width="100%">
 </details>details>
 
-* **Silver:** Data cleansing and validation. Implemented **Schema Evolution** and `_rescued_data` recovery to handle malformed JSON.
-* **Gold:** Business Logic layer. Created **SQL Views** for investigative alerting (PEP Monitoring, Fuzzy Name Matching).
+* **Silver:** Data cleansing and validation. Implemented `_rescued_data` recovery to handle malformed CSV and standardized datatypes for fields. 
+  
+* **Gold:** Business Logic layer. Created aggregated tables and views to identify the PEP risks, high volume transaction risks and Sanctioned client names fuzzy matches. 
 
 ## 3. Technical Decisions & Trade-offs
 ### Why PySpark for Gold?
