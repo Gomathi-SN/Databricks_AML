@@ -1,4 +1,4 @@
-# Databricks_AML
+# Databricks AML
 Anti Money laundering databricks project (Medallion architecture)
 <details>
 <img src="img/README.jpg" width="100%">
